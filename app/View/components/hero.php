@@ -8,7 +8,7 @@
                 Your swift portal to coding brilliance! Unleash the power of learning with concise and impactful video tutorials. Let's code together!
             </div>
         </section>
-        <a class="py-4 px-10 mx-auto my-10 w-max rounded-full min-w-[90px] border border-black ease-in-out hover:bg-black hover:text-white transition-all">
+        <a class="cursor-pointer py-4 px-10 mx-auto my-10 w-max rounded-full min-w-[90px] border border-black ease-in-out hover:bg-black hover:text-white transition-all">
             Jump To Course
         </a>
     </div>
