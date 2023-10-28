@@ -14,10 +14,13 @@
         <header>
             <?php include __DIR__ . "/../components/navbar.php" ?>
         </header>
-        <main>
+        <main class="mb-10">
             <?php include __DIR__ . "/../components/hero.php" ?>
         </main>
     </main>
+    <footer class="w-full bg-gray-50">
+        <?php include __DIR__ . "/../components/footer.php" ?>
+    </footer>
 </body>
 
 </html>
