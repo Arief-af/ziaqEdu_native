@@ -9,7 +9,7 @@
 </head>
 <body>
    <div class="lg:px-20 px-10">
-    
+        <?php include __DIR__ . "/../components/navbar.php" ?>
    </div>
 </body>
 </html>
