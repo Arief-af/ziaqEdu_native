@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <main class="lg:px-20 px-10">
+    <main class="lg:px-20 sm:px-2 md:px-10">
         <header>
             <?php include __DIR__ . "/../components/navbar.php" ?>
         </header>
