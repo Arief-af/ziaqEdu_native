@@ -39,7 +39,8 @@
 
             <section class="flex w-full flex-col justify-center lg:flex-row  gap-5">
                 <section class="w-full lg:w-2/3 mx-auto">
-                    <video controls class="rounded-lg" src="/storage/video.mp4" alt="not found">
+                    <video controls class="rounded-lg" alt="not found">
+                    <source src="/storage/video.mp4" type="video/mp4">
                     </video>
                     <div class="my-10 bg-slate-200 text-black p-10 rounded-lg">
                         <span class="font-bold"> LARAVEL TUTORIAL</span> <br>

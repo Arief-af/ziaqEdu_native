@@ -1,11 +1,13 @@
 <nav class="flex items-center p-10 justify-between">
-    <section class="text-2xl font-bold">
-        ZiaqEdu
-    </section>
+    <a href="/">
+        <section class="text-2xl font-bold">
+            ZiaqEdu
+        </section>
+    </a>
     <section class="hidden md:block">
         <ul class="flex gap-5 items-center">
             <li>
-                <a href="" class="border-b-2 p-2 border-transparent flex items-center hover:border-black transition-all duration-300 ease-in-out">
+                <a href="/courses" class="border-b-2 p-2 border-transparent flex items-center hover:border-black transition-all duration-300 ease-in-out">
                     <i class='mr-2 text-2xl bx bx-book'></i>Course
                 </a>
             </li>
