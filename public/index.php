@@ -7,5 +7,6 @@ use ZiaqEdu\Controller\CourseController;
 
 Router::add('GET', '/', HomeController::class, 'index');
 Router::add('GET', '/courses', CourseController::class, 'index');
+Router::add('GET', '/courses/show', CourseController::class, 'show');
 
 Router::run();

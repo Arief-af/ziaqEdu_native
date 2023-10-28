@@ -14,4 +14,13 @@ class CourseController
 
         View::render('pages/course/index', $model);
     }
+
+    function show(): void
+    {
+        $model = [
+            "title" => "Ziaq Edu",
+            "content" => "HAHAHHH"
+        ];
+        View::render('pages/course/show', $model);
+    }
 }
