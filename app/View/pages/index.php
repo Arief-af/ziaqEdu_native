@@ -8,8 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-   <div class="">
-    sf
+   <div class="lg:px-20 px-10">
+    
    </div>
 </body>
 </html>
