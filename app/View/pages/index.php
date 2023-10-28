@@ -10,10 +10,14 @@
 </head>
 
 <body>
-    <div class="lg:px-20 px-10">
-        <?php include __DIR__ . "/../components/navbar.php" ?>
-        <?php include __DIR__ . "/../components/hero.php" ?>
-    </div>
+    <main class="lg:px-20 px-10">
+        <header>
+            <?php include __DIR__ . "/../components/navbar.php" ?>
+        </header>
+        <main>
+            <?php include __DIR__ . "/../components/hero.php" ?>
+        </main>
+    </main>
 </body>
 
 </html>
