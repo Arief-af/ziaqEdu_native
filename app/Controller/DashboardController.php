@@ -4,6 +4,7 @@ namespace ZiaqEdu\Controller;
 
 use ZiaqEdu\App\View;
 use ZiaqEdu\Models\Category;
+use ZiaqEdu\Models\Course;
 
 class DashboardController
 {
@@ -46,6 +47,43 @@ class DashboardController
         View::render('pages/dashboard/course/create', $model);
     }
 
+    function checker($data, $tempName)
+    {
+        $nameRandom = rand();
+        $name = $nameRandom . basename($data);
+        $target_dir = 'storage/courses/' . $nameRandom;
+        $target_file = $target_dir . basename($data);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $uploadOk = 1;
+
+        // Allow certain file formats
+        if (
+            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" && $imageFileType != "mp4"
+        ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF, mp4 files are allowed.";
+            $uploadOk = 0;
+        }
+        if ($uploadOk == 0) {
+            die('fail');
+        } else {
+            if (move_uploaded_file($tempName, $target_file)) {
+                return $name;
+            } else {
+                die("Sorry, there was an error uploading your file.");
+            }
+        }
+    }
+
+    function courseStore(): void
+    {
+        
+        $thumbnail = $this->checker($_FILES['thumbnail']["name"], $_FILES['thumbnail']["tmp_name"]);
+        $video = $this->checker($_FILES['video']["name"], $_FILES['video']["tmp_name"]);
+        Course::store($thumbnail, $video);
+        header('Location: ' . '/dashboard/course');;
+    }
 
     function categoryAll(): void
     {
@@ -77,8 +115,8 @@ class DashboardController
     function categoryStore(): void
     {
         $nameRandom = rand();
-        $image = $nameRandom.basename($_FILES["image"]["name"]);
-        $target_dir = 'storage/thumbnail/'.$nameRandom;
+        $image = $nameRandom . basename($_FILES["image"]["name"]);
+        $target_dir = 'storage/thumbnail/' . $nameRandom;
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

@@ -17,6 +17,7 @@ Model::setDB($mysqli);
 Router::add('GET', '/dashboard', DashboardController::class, 'index');
 Router::add('GET', '/dashboard/course', DashboardController::class, 'courseAll');
 Router::add('GET', '/dashboard/course/create', DashboardController::class, 'courseCreate');
+Router::add('POST', '/dashboard/course/store', DashboardController::class, 'courseStore');
 
 Router::add('GET', '/dashboard/category', DashboardController::class, 'categoryAll');
 Router::add('GET', '/dashboard/category/create', DashboardController::class, 'categoryCreate');

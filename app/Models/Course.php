@@ -20,11 +20,12 @@ class Course extends Model
         return $data;
     }
 
-    public static function store($image)
+    public static function store($image, $video)
     {
-        $name = $_POST['name'];
-        $desc = $_POST['desc'];
-        $query = "INSERT INTO categories (name, image, `desc`) VALUES ('$name', '$image', '$desc')";
+        $title = $_POST['title'];
+        $desc = $_POST['description'];
+        $category_id = $_POST['category_id'];
+        $query = "INSERT INTO courses (title, thumbnail,description,video,category_id) VALUES ('$title', '$image','$desc','$video','$category_id')";
         $result = self::$mysqli->query($query);
 
         if ($result) {
