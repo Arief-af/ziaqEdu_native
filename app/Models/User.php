@@ -4,10 +4,12 @@ use ZiaqEdu\Models\Model;
 
 class User extends Model 
 {
-    public static function getAllUsers() {
-        $result = self::$mysqli->query('SELECT * FROM users');
+    public static function login() {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $result = self::$mysqli->query("SELECT * FROM users where username = '$username' and password = '$password'");
         $rows = $result->fetch_all(MYSQLI_ASSOC);
-        return $rows;
+        return !empty($rows);
     }
 
     public static function store() {

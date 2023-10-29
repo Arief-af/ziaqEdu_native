@@ -3,6 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use ZiaqEdu\Controller\DashboardController;
 use ZiaqEdu\App\Router;
+use ZiaqEdu\Controller\Controller;
 use ZiaqEdu\Controller\HomeController;
 use ZiaqEdu\Controller\CourseController;
 use ZiaqEdu\Models\Model;
@@ -15,6 +16,9 @@ if ($mysqli->connect_error) {
 }
 
 Model::setDB($mysqli);
+Router::add('GET', '/login', Controller::class, 'login');
+Router::add('GET', '/logout', Controller::class, 'logout');
+
 Router::add('GET', '/dashboard', DashboardController::class, 'index');
 Router::add('GET', '/dashboard/course', DashboardController::class, 'courseAll');
 Router::add('GET', '/dashboard/course/create', DashboardController::class, 'courseCreate');

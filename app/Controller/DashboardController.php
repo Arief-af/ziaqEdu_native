@@ -10,8 +10,6 @@ class DashboardController
 {
     function index(): void
     {
-        session_start();
-        $_SESSION["auth"] = true;
         $model = [
             "title" => "Ziaq Edu",
             "content" => "HAHAHHH",
@@ -23,8 +21,6 @@ class DashboardController
 
     function courseAll(): void
     {
-        session_start();
-        $_SESSION["auth"] = true;
         $model = [
             "title" => "Ziaq Edu",
             "data" => Course::index(),
@@ -36,8 +32,6 @@ class DashboardController
 
     function courseCreate(): void
     {
-        session_start();
-        $_SESSION["auth"] = true;
         $model = [
             "title" => "Course Create",
             "categories" => Category::getAllCategory(),
@@ -90,8 +84,6 @@ class DashboardController
 
     function categoryAll(): void
     {
-        session_start();
-        $_SESSION["auth"] = true;
         $model = [
             "title" => "Ziaq Edu",
             "data" => Category::getAllCategory(),
@@ -103,9 +95,6 @@ class DashboardController
 
     function categoryCreate(): void
     {
-        session_start();
-        $_SESSION["auth"] = true;
-
         $model = [
             "title" => "Category - Create",
             "data" => Category::getAllCategory(),

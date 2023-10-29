@@ -11,7 +11,6 @@ class HomeController
         $model = [
             "title" => "Ziaq Edu",
             "content" => "HAHAHHH",
-            "data" => User::getAllUsers()
         ];
 
         View::render('pages/index', $model);

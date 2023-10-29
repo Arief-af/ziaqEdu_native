@@ -35,39 +35,19 @@
         <header>
             <?php include __DIR__ . "/../../components/navbar.php" ?>
         </header>
-        <main class="mb-10 p-10">
-            <table class="min-w-full">
-                <thead class="bg-white border-b">
-                    <tr>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            #
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            First
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            Last
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            Handle
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-gray-100 border-b">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Mark
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Otto
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            @mdo
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <main class="mb-10 gap-5 justify-center md:flex-row flex-col flex p-20">
+            <div class="max-w-lg rounded overflow-hidden shadow-lg">
+                <img src="https://source.unsplash.com/800x400/?study" alt="Unsplash Image" class="w-full h-40 object-cover">
+                <div class="px-6 py-4">
+                    <a href="/dashboard/course" class="block text-xl font-semibold mb-2 hover:underline">Courses</a>
+                </div>
+            </div>
+            <div class="max-w-lg rounded overflow-hidden shadow-lg">
+                <img src="https://source.unsplash.com/800x400/?category" alt="Unsplash Image" class="w-full h-40 object-cover">
+                <div class="px-6 py-4">
+                    <a href="/dashboard/category" class="block text-xl font-semibold mb-2 hover:underline">Categories</a>
+                </div>
+            </div>
         </main>
     </main>
     <footer class="w-full bg-gray-50">

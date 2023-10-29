@@ -8,10 +8,9 @@ use ZiaqEdu\Models\Course;
 class CourseController
 {
     function index(): void 
-    {
-        session_unset();
+    {       
         $model = [
-            "title" => "Ziaq Edu",
+            "title" => "ZiaqEdu - Courses",
             "data" => Category::getAllCategory()
         ];
 
