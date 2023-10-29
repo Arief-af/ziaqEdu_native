@@ -20,6 +20,14 @@ class Course extends Model
         return $data;
     }
 
+    public static function index()
+    {
+        $queryLists = self::$mysqli->query("SELECT * FROM courses
+        JOIN categories ON courses.category_id = categories.id;");
+        $result = $queryLists->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
     public static function store($image, $video)
     {
         $title = $_POST['title'];

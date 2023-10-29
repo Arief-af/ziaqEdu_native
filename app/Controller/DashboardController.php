@@ -27,7 +27,7 @@ class DashboardController
         $_SESSION["auth"] = true;
         $model = [
             "title" => "Ziaq Edu",
-            "data" => "HAHAHHH",
+            "data" => Course::index(),
             "page" => "admin"
         ];
 

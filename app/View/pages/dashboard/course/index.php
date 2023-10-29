@@ -36,38 +36,70 @@
             <?php include __DIR__ . "/../../../components/navbar.php" ?>
         </header>
         <main class="mb-10 p-10">
-            <table class="min-w-full">
-                <thead class="bg-white border-b">
-                    <tr>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            #
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            First
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            Last
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                            Handle
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="bg-gray-100 border-b">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Mark
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Otto
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            @mdo
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="overflow-x-auto">
+                <table class="min-w-full overflow-hidden">
+                    <thead class="bg-white border-b">
+                        <tr>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                id
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                title
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                description
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                thumbnail
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                video
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Category
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($model['data'] as $key => $value) { ?>
+                            <tr class="bg-gray-100 border-b">
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <?= $value['id'] ?>
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <?= $value['title'] ?>
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <?= $value['description'] ?>
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <?= $value['thumbnail'] ?>
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <?= $value['video'] ?>
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <?= $value['name'] ?>
+                                </td>
+                                <td class="text-sm flex gap-3 text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <form action="/dashboard/category/delete?id=<?= $value['id'] ?>" method="POST">
+                                        <button class="p-2 justify-center flex rounded-full min-w-[90px] border text-red-400 border-red-400 ease-in-out hover:bg-red-400 hover:text-white transition-all">
+                                            Delete
+                                        </button>
+                                    </form>
+                                    <a href="/dashboard/category/edit?id=<?= $value['id'] ?>" class="p-2 justify-center flex rounded-full min-w-[90px] border text-blue-400 border-blue-400 ease-in-out hover:bg-blue-400 hover:text-white transition-all">
+                                        Edit
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+
         </main>
     </main>
     <footer class="w-full bg-gray-50">
