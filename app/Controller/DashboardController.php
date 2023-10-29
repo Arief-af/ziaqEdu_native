@@ -26,7 +26,7 @@ class DashboardController
         $_SESSION["auth"] = true;
         $model = [
             "title" => "Ziaq Edu",
-            "content" => "HAHAHHH",
+            "data" => "HAHAHHH",
             "page" => "admin"
         ];
 
@@ -38,8 +38,8 @@ class DashboardController
         session_start();
         $_SESSION["auth"] = true;
         $model = [
-            "title" => "Ziaq Edu",
-            "content" => "HAHAHHH",
+            "title" => "Course Create",
+            "categories" => Category::getAllCategory(),
             "page" => "admin"
         ];
 

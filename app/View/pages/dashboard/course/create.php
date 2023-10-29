@@ -56,11 +56,10 @@
 
                 <label for="catagory" class="block mb-2 text-sm font-medium text-gray-900">Select an category</label>
                 <select id="catagory" class="mb-5 border bg-white border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                    <option selected>Choose a country</option>
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
-                    <option value="FR">France</option>
-                    <option value="DE">Germany</option>
+                    <option selected disabled>Choose a category</option>
+                   <?php foreach ($model['categories'] as $key => $value) { ?>
+                    <option value="<?= $value['id']?>"><?= $value['name'] ?></option>
+                    <?php } ?>
                 </select>
 
                 <button class="float-right p-2 rounded-full min-w-[90px] border border-black ease-in-out bg-black text-white transition-all">
