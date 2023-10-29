@@ -17,7 +17,8 @@ class Category extends Model
     public static function store($image)
     {
         $name = $_POST['name'];
-        $query = "INSERT INTO categories (name,image) VALUES ('$name','$image')";
+        $desc = $_POST['desc'];
+        $query = "INSERT INTO categories (name, image, `desc`) VALUES ('$name', '$image', '$desc')";
         $result = self::$mysqli->query($query);
 
         if ($result) {
@@ -43,8 +44,9 @@ class Category extends Model
     {
         $id = $_GET['id'];
         $name = $_POST['name'];
+        $desc = $_POST['desc'];
         $query = "UPDATE categories
-                  SET name = '$name', image = 'tes'
+                  SET name = '$name', `desc` = '$desc'
                   WHERE id = '$id'";
         $result = self::$mysqli->query($query);
         if ($result) {
@@ -60,7 +62,7 @@ class Category extends Model
         $query = "SELECT * FROM categories WHERE id='$id'";
         $result = self::$mysqli->query($query);
         $result = $result->fetch_all(MYSQLI_ASSOC);
-        $data = ['id' => $result[0]['id'], 'name' => $result[0]['name']];
+        $data = ['id' => $result[0]['id'], 'name' => $result[0]['name'], 'desc' => $result[0]['desc']];
         if ($result) {
             return $data;
         } else {

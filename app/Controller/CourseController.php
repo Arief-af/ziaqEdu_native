@@ -2,6 +2,7 @@
 
 namespace ZiaqEdu\Controller;
 use ZiaqEdu\App\View;
+use ZiaqEdu\Models\Category;
 class CourseController
 {
     function index(): void 
@@ -9,7 +10,7 @@ class CourseController
         session_unset();
         $model = [
             "title" => "Ziaq Edu",
-            "content" => "HAHAHHH"
+            "data" => Category::getAllCategory()
         ];
 
         View::render('pages/course/index', $model);

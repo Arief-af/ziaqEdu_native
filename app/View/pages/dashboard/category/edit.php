@@ -45,6 +45,11 @@
                     <label for="name" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">name</label>
                 </div>
 
+                <div class="mb-5">
+                    <label for="desc" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
+                    <textarea id="desc" name="desc" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300" placeholder="description"><?= $model['data']['desc'] ?></textarea>
+                </div>
+
                 <button type="submit" class="float-right p-2 rounded-full min-w-[90px] border border-black ease-in-out bg-black text-white transition-all">
                     Update
                 </button>

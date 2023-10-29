@@ -84,7 +84,6 @@ class DashboardController
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
         } else {
             echo "File is not an image.";
@@ -99,11 +98,9 @@ class DashboardController
             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
         }
-
         if ($uploadOk == 0) {
             die('fail');
         } else {
-
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             } else {
                 die("Sorry, there was an error uploading your file.");
