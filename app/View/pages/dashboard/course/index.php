@@ -85,12 +85,12 @@
                                     <?= $value['name'] ?>
                                 </td>
                                 <td class="text-sm flex gap-3 text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    <form action="/dashboard/category/delete?id=<?= $value['id'] ?>" method="POST">
-                                        <button class="p-2 justify-center flex rounded-full min-w-[90px] border text-red-400 border-red-400 ease-in-out hover:bg-red-400 hover:text-white transition-all">
+                                    <form action="/dashboard/course/delete?id=<?= $value['id'] ?>" method="POST">
+                                        <button type="submit" class="p-2 justify-center flex rounded-full min-w-[90px] border text-red-400 border-red-400 ease-in-out hover:bg-red-400 hover:text-white transition-all">
                                             Delete
                                         </button>
                                     </form>
-                                    <a href="/dashboard/category/edit?id=<?= $value['id'] ?>" class="p-2 justify-center flex rounded-full min-w-[90px] border text-blue-400 border-blue-400 ease-in-out hover:bg-blue-400 hover:text-white transition-all">
+                                    <a href="/dashboard/course/edit?id=<?= $value['id'] ?>" class="p-2 justify-center flex rounded-full min-w-[90px] border text-blue-400 border-blue-400 ease-in-out hover:bg-blue-400 hover:text-white transition-all">
                                         Edit
                                     </a>
                                 </td>

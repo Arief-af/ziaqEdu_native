@@ -47,6 +47,12 @@ class DashboardController
         View::render('pages/dashboard/course/create', $model);
     }
 
+    function courseDelete(): void
+    {
+        $model = Course::delete();
+        header('Location: ' . '/dashboard/course');;
+    }
+
     function checker($data, $tempName)
     {
         $nameRandom = rand();
@@ -55,13 +61,11 @@ class DashboardController
         $target_file = $target_dir . basename($data);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        $uploadOk = 1;
-
-        // Allow certain file formats
         if (
             $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" && $imageFileType != "mp4"
         ) {
+            echo print_r($imageFileType);
             echo "Sorry, only JPG, JPEG, PNG & GIF, mp4 files are allowed.";
             $uploadOk = 0;
         }
@@ -71,16 +75,15 @@ class DashboardController
             if (move_uploaded_file($tempName, $target_file)) {
                 return $name;
             } else {
-                die("Sorry, there was an error uploading your file.");
+                echo "file terlalu besar";
             }
         }
     }
 
     function courseStore(): void
     {
-        
-        $thumbnail = $this->checker($_FILES['thumbnail']["name"], $_FILES['thumbnail']["tmp_name"]);
         $video = $this->checker($_FILES['video']["name"], $_FILES['video']["tmp_name"]);
+        $thumbnail = $this->checker($_FILES['thumbnail']["name"], $_FILES['thumbnail']["tmp_name"]);
         Course::store($thumbnail, $video);
         header('Location: ' . '/dashboard/course');;
     }
@@ -160,6 +163,12 @@ class DashboardController
         header('Location: ' . '/dashboard/category');;
     }
 
+    function courseUpdate(): void
+    {
+        $model = Course::update();
+        header('Location: ' . '/dashboard/course');;
+    }
+
     function categoryEdit(): void
     {
         $_SESSION["auth"] = true;
@@ -170,5 +179,18 @@ class DashboardController
         ];
 
         View::render('pages/dashboard/category/edit', $model);
+    }
+
+    function courseEdit(): void
+    {
+        $_SESSION["auth"] = true;
+        $model = [
+            "title" => "Course - Edit",
+            "categories" => Category::getAllCategory(),
+            "data" => Course::getEditCourse(),
+            "page" => "admin"
+        ];
+
+        View::render('pages/dashboard/course/edit', $model);
     }
 }

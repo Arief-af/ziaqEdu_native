@@ -13,11 +13,15 @@ $mysqli = new mysqli('localhost', 'ziaq', 'nolepngoding', 'ziaqEduNative');
 if ($mysqli->connect_error) {
     die('Connection failed: ' . $mysqli->connect_error);
 }
+
 Model::setDB($mysqli);
 Router::add('GET', '/dashboard', DashboardController::class, 'index');
 Router::add('GET', '/dashboard/course', DashboardController::class, 'courseAll');
 Router::add('GET', '/dashboard/course/create', DashboardController::class, 'courseCreate');
+Router::add('GET', '/dashboard/course/edit', DashboardController::class, 'courseEdit');
 Router::add('POST', '/dashboard/course/store', DashboardController::class, 'courseStore');
+Router::add('POST', '/dashboard/course/delete', DashboardController::class, 'courseDelete');
+Router::add('POST', '/dashboard/course/update', DashboardController::class, 'courseUpdate');
 
 Router::add('GET', '/dashboard/category', DashboardController::class, 'categoryAll');
 Router::add('GET', '/dashboard/category/create', DashboardController::class, 'categoryCreate');
@@ -30,6 +34,7 @@ Router::add('POST', '/dashboard/category/update', DashboardController::class, 'c
 Router::add('GET', '/', HomeController::class, 'index');
 Router::add('GET', '/courses', CourseController::class, 'index');
 Router::add('GET', '/courses/show', CourseController::class, 'show');
+Router::add('GET', '/courses/show/video', CourseController::class, 'showVideo');
 
 
 Router::run();

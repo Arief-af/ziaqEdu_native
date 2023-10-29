@@ -29,4 +29,16 @@ class CourseController
         // print_r($model['lists']);
         View::render('pages/course/show', $model);
     }
+
+    function showVideo(): void
+    {
+        $data = Course::getAllCourse();
+        $model = [
+            "title" => "Ziaq Edu",
+            "video" => $data['video'],
+            "lists" => $data['lists']
+        ];
+        // print_r($model['lists']);
+        View::render('pages/course/show', $model);
+    }
 }
