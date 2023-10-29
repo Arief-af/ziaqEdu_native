@@ -3,6 +3,8 @@
 namespace ZiaqEdu\Controller;
 use ZiaqEdu\App\View;
 use ZiaqEdu\Models\Category;
+use ZiaqEdu\Models\Course;
+
 class CourseController
 {
     function index(): void 
@@ -18,10 +20,13 @@ class CourseController
 
     function show(): void
     {
+        $data = Course::getAllCourse();
         $model = [
             "title" => "Ziaq Edu",
-            "content" => "HAHAHHH"
+            "video" => $data['video'],
+            "lists" => $data['lists']
         ];
+        // print_r($model['lists']);
         View::render('pages/course/show', $model);
     }
 }

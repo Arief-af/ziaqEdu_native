@@ -43,6 +43,7 @@
                 <?php
                 foreach ($model['data'] as $value) {
                 ?>
+
                     <a href="/courses/show?id=<?= $value['id'] ?>">
                         <div class="flex flex-col md:flex-row gap-4 border-b-2 p-5 transition-all bg-slate-50 mb-3 rounded-lg cursor-pointer hover:bg-slate-100 border-gray-200 py-10">
                             <div class="w-full md:w-1/3">
