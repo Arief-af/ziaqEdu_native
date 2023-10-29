@@ -56,7 +56,7 @@
                         <a href="/courses/show/video?id=<?= $value['id'] ?>&category=<?= $value['name'] ?>">
                             <div class="flex flex-col mx-auto gap-3 bg-white p-4 w-full max-w-md rounded-lg">
                                 <div class="h-[200px] rounded-xl overflow-hidden">
-                                    <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="" />
+                                    <img class="h-full w-full object-cover" src="/storage/thumbnail/<?= $value['thumbnail']?>" alt="" srcset="" />
                                 </div>
                                 <div class="bg-slate-100 p-4 rounded-lg">
                                     <span class="font-bold"> <?= $value['title'] ?></span> <br>
